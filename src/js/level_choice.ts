@@ -1,15 +1,17 @@
-const levelForm = document.getElementById('level') as HTMLFormElement
+const levelForm: HTMLElement | null = document.getElementById('level')
 
 const levelChoiceButtons =
     document.querySelectorAll<HTMLButtonElement>('.level__choice')
 
-const levelChoices = document.getElementById('level__choices') as HTMLDivElement
+const levelChoicesDiv: HTMLElement | null =
+    document.getElementById('level__choices')
 
 let clicked = false
 
-levelChoices.addEventListener('click', (event: Event) => {
+levelChoicesDiv?.addEventListener('click', (event) => {
     event.preventDefault()
-    const target = event.target as HTMLButtonElement
+
+    const target = event.target as HTMLElement
 
     if (target.closest('button')) {
         console.log(target.dataset.level)
@@ -24,7 +26,7 @@ levelChoices.addEventListener('click', (event: Event) => {
     }
 })
 
-levelForm.addEventListener('submit', (event: Event) => {
+levelForm?.addEventListener('submit', (event: Event) => {
     if (clicked === false) {
         event.preventDefault()
         levelChoiceButtons.forEach((levelButton) => {

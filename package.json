@@ -4,12 +4,12 @@
     "description": "\u0000",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "format": "prettier --write ./src/",
         "lint:js": "eslint ./src/**/*.js",
         "lint:css": "stylelint ./src/**/*.css",
         "lint:ts": "tsc --noEmit",
-        "lint": "npm run lint:ts && npm run lint:css",
+        "lint": "npm run lint:ts && npm run lint:css && npm run jest",
         "prepare": "husky install",
         "build": "set NODE_ENV=production&&npx webpack",
         "start": "webpack-dev-server --open"
@@ -36,6 +36,7 @@
         "eslint-plugin-prettier": "^4.0.0",
         "html-webpack-plugin": "^5.5.0",
         "husky": "^8.0.1",
+        "jest": "^28.1.2",
         "mini-css-extract-plugin": "^2.6.1",
         "prettier": "^2.7.0",
         "style-loader": "^3.3.1",

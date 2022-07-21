@@ -99,6 +99,11 @@ body {
     cursor: pointer;
 }
 
+.button a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -135,10 +140,21 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 15px;
     perspective: 1000px;
+}
+
+.three-pairs {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.six-pairs {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.nine-pairs {
+    grid-template-columns: repeat(6, 1fr);
 }
 
 .card {
